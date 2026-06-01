@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — MyTalkMate</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --border: #1e2330;
+      --accent: #5b8fff;
+      --accent2: #a78bfa;
+      --text: #e8eaf0;
+      --muted: #7a7f95;
+      --soft: #1a1f2e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Background mesh */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 0%, rgba(91,143,255,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 90% 100%, rgba(167,139,250,0.07) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Header */
+    header {
+      padding: 60px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .app-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .app-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .updated {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 6px 14px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.15s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.25s; }
+    .section:nth-child(5) { animation-delay: 0.3s; }
+    .section:nth-child(6) { animation-delay: 0.35s; }
+    .section:nth-child(7) { animation-delay: 0.4s; }
+    .section:nth-child(8) { animation-delay: 0.45s; }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent2);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #9aa0b8;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      color: #9aa0b8;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight p { margin: 0; color: #b0b8d0; }
+
+    /* Contact block */
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(91,143,255,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .contact-block a:hover { border-color: var(--accent); }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--accent2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="app-label">MyTalkMate</div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Your privacy matters. Here's exactly what we do — and don't do — with your data.</p>
+      <span class="updated">Last updated: May 20, 2026</span>
+    </header>
+
+    <main>
+
+      <div class="section">
+        <div class="section-num">01</div>
+        <h2>Introduction</h2>
+        <p>MyTalkMate ("we", "our", or "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our mobile application.</p>
+        <p>By using MyTalkMate, you agree to the practices described in this policy.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-num">02</div>
+        <h2>Information We Collect</h2>
+        <p>We collect only the information necessary to provide our service:</p>
+        <ul>
+          <li>Voice recordings during active sessions (processed in real-time, not stored)</li>
+          <li>App usage data and performance metrics (anonymous)</li>
+          <li>Device information (OS version, device model) for compatibility</li>
+          <li>Account information if you create an account (email, display name)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-num">03</div>
+        <h2>How We Use Your Information</h2>
+        <p>Your information is used solely to:</p>
+        <ul>
+          <li>Provide and improve the conversation features of the app</li>
+          <li>Diagnose technical issues and ensure app stability</li>
+          <li>Respond to your support requests</li>
+          <li>Send important service-related notifications (with your consent)</li>
+        </ul>
+        <div class="highlight">
+          <p>We do <strong>not</strong> sell, rent, or trade your personal data to third parties for marketing purposes.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-num">04</div>
+        <h2>Voice & Audio Data</h2>
+        <p>MyTalkMate processes voice input to enable conversations. Audio is transmitted securely to our servers for real-time speech recognition and is <strong>not retained</strong> after your session ends.</p>
+        <p>We do not use your voice data to build personal profiles or for any purpose other than delivering the in-app experience.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-num">05</div>
+        <h2>Data Storage & Security</h2>
+        <p>We take security seriously and implement industry-standard measures:</p>
+        <ul>
+          <li>All data is transmitted over encrypted HTTPS connections</li>
+          <li>Servers are hosted in secure, certified data centers</li>
+          <li>Access to user data is strictly limited to authorized personnel</li>
+          <li>We regularly audit our security practices</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-num">06</div>
+        <h2>Third-Party Services</h2>
+        <p>MyTalkMate may use trusted third-party services (such as speech recognition APIs and analytics tools). These providers are bound by their own privacy policies and are not permitted to use your data for any other purpose.</p>
+        <p>We do not integrate third-party advertising SDKs into the app.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-num">07</div>
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Request correction or deletion of your data</li>
+          <li>Withdraw consent at any time</li>
+          <li>Export your data in a portable format</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the details below.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-num">08</div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or how we handle your data, we're happy to help.</p>
+        <div class="contact-block">
+          <p>Email: <a href="mailto:privacy@mytalkmate.app">privacy@mytalkmate.app</a></p>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>© 2026 <span>MyTalkMate</span>. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
