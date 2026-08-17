@@ -160,6 +160,14 @@
       margin: 12px 0;
     }
 
+    .warn-box {
+      background: rgba(255, 179, 71, 0.06);
+      border: 1px solid rgba(255, 179, 71, 0.25);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0;
+    }
+
     .contact-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -218,61 +226,66 @@
       <span>MyTalkMate</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: June 1, 2026 &nbsp;·&nbsp; Last updated: June 1, 2026</p>
+    <p class="meta">Effective date: August 16, 2026 &nbsp;·&nbsp; Last updated: August 16, 2026</p>
   </header>
 
   <main>
     <p class="intro">
-      MyTalkMate is developed by DrozDEV as an independent iOS application. This Privacy Policy explains what data the app collects, how it is used, and your rights as a user. We are committed to collecting the minimum data necessary to deliver the service.
+      MyTalkMate is developed by DrozDEV as an independent iOS application. This Privacy Policy explains what data the app collects, how it is used, who it is shared with, and your rights as a user. We are committed to collecting the minimum data necessary to deliver the service.
     </p>
 
     <section>
+      <h2>Third-Party AI Service — What Is Shared</h2>
+      <div class="warn-box">
+        <p style="margin:0"><strong>Before using the core conversation feature, MyTalkMate asks for your explicit consent to send the text of your conversation to a third-party AI provider.</strong> You can decline; declining disables the conversation feature, since it cannot function without it.</p>
+      </div>
+      <p>When you speak in the app, here is exactly what happens and where your data goes:</p>
+      <ul>
+        <li><strong>What is sent:</strong> the text transcription of your spoken words (converted to text on your device), plus the recent turns of the current conversation for context.</li>
+        <li><strong>Who it is sent to:</strong> <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic PBC</a>, the maker of the Claude AI models, via our own relay server (api.drozdev.com), which forwards the request and does not store it.</li>
+        <li><strong>Why:</strong> Anthropic's AI model generates the conversational reply that the app speaks back to you.</li>
+        <li><strong>What is NOT sent:</strong> your name, email, device identifiers, precise location, or any other personal identifier. Your audio recording itself is never sent — only the transcribed text.</li>
+      </ul>
+      <p>Anthropic processes this text solely to generate a response to your request and does not use it to train its models by default for API traffic like ours. Review <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a> for details on how they handle this data.</p>
+    </section>
+
+    <section>
       <h2>Information We Collect</h2>
-      <p>MyTalkMate does <strong>not</strong> collect personally identifiable information and has no backend servers. All data stays on your device unless explicitly described below.</p>
-      <p>The following data is stored <strong>locally on your device only</strong> via Apple's SwiftData framework:</p>
+      <p>MyTalkMate does <strong>not</strong> collect personally identifiable information and has no user accounts. The following data is stored <strong>locally on your device only</strong> via Apple's SwiftData framework:</p>
       <ul>
         <li>Practice session history (duration, score, accuracy)</li>
         <li>Daily goals and streak progress</li>
         <li>Profile settings (display name, target language, voice preference)</li>
         <li>App preferences and notification settings</li>
       </ul>
-      <p>We have no access to this data. It is never transmitted to our servers.</p>
+      <p>We have no access to this data. It is never transmitted to us or to any third party — it stays on your device.</p>
     </section>
 
     <section>
       <h2>Microphone &amp; Speech Recognition</h2>
       <p>MyTalkMate requests microphone access to enable voice conversations during practice sessions. Your voice is processed by <strong>Apple's SFSpeechRecognizer</strong>, which may transmit audio to Apple's servers for transcription.</p>
       <ul>
-        <li>We do not record, store, or transmit your audio</li>
-        <li>Audio is processed in real-time and discarded after transcription</li>
+        <li>We do not record, store, or transmit your raw audio ourselves</li>
+        <li>Audio is processed in real-time by Apple's system service and discarded after transcription</li>
+        <li>Only the resulting text — not the audio — is sent onward to generate an AI reply, as described above</li>
         <li>You can revoke microphone access at any time in iOS Settings</li>
       </ul>
       <p>Please refer to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> for details on how Apple handles speech data.</p>
     </section>
 
     <section>
-      <h2>AI Conversations (OpenRouter API)</h2>
-      <p>To generate AI responses, the <strong>text</strong> of your conversation turns is sent to <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter API</a> for processing. This includes:</p>
+      <h2>Our Relay Server</h2>
+      <p>MyTalkMate uses a relay server we operate (api.drozdev.com) solely to forward your conversation text to Anthropic's API and return the reply. This server:</p>
       <ul>
-        <li>The transcribed text of your spoken input</li>
-        <li>Conversation context for the current session</li>
-        <li>Selected language and difficulty level</li>
+        <li>Does not store or log conversation content</li>
+        <li>Does not attach any personal identifier to the request</li>
+        <li>Exists only to keep our API credentials secure and to route requests reliably — it performs no other processing</li>
       </ul>
-      <div class="highlight-box">
-        <p style="margin:0"><strong>We do not send:</strong> your name, email, device identifiers, or any personal information to OpenRouter.</p>
-      </div>
-      <p>Please review <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter's Privacy Policy</a> for their data handling practices.</p>
     </section>
 
     <section>
       <h2>Subscriptions &amp; Payments</h2>
-      <p>MyTalkMate offers optional Pro subscriptions. All purchases are processed exclusively through <strong>Apple App Store</strong> and managed via <strong>RevenueCat</strong>. We do not collect or store any payment or billing information.</p>
-      <ul>
-        <li>Payment data is handled entirely by Apple</li>
-        <li>RevenueCat is used to verify subscription status only</li>
-        <li>No financial information is accessible to DrozDEV</li>
-      </ul>
-      <p>See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a> for more details.</p>
+      <p>MyTalkMate is currently free to use, with no in-app purchases, subscriptions, or paid content. If this changes in a future update, this policy will be updated accordingly before that update is released.</p>
     </section>
 
     <section>
