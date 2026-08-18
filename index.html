@@ -237,14 +237,14 @@
     <section>
       <h2>Third-Party AI Service — What Is Shared</h2>
       <div class="warn-box">
-        <p style="margin:0"><strong>Before using the core conversation feature, MyTalkMate asks for your explicit consent to send the text of your conversation to a third-party AI provider.</strong> You can decline; declining disables the conversation feature, since it cannot function without it.</p>
+        <p style="margin:0"><strong>Before using the core conversation feature, MyTalkMate asks for your explicit consent to send the text of your conversation to a third-party AI provider.</strong> You can decline; declining disables the conversation feature, since it cannot function without it. You can also withdraw your consent at any time in the app's Settings — after withdrawing, the conversation feature is disabled again and no further text is sent.</p>
       </div>
       <p>When you speak in the app, here is exactly what happens and where your data goes:</p>
       <ul>
         <li><strong>What is sent:</strong> the text transcription of your spoken words — converted to text by Apple's speech recognition, as described in "Microphone &amp; Speech Recognition" below — plus the recent turns of the current conversation for context.</li>
         <li><strong>Who it is sent to:</strong> <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic PBC</a>, the maker of the Claude AI models, via our own relay server (api.drozdev.com), which forwards the request and does not store it.</li>
         <li><strong>Why:</strong> Anthropic's AI model generates the conversational reply that the app speaks back to you.</li>
-        <li><strong>What is NOT sent:</strong> your name, email, device identifiers, precise location, or any other personal identifier. Your audio recording itself is never sent — only the transcribed text.</li>
+        <li><strong>What is NOT sent:</strong> your name, email, device identifiers, precise location, or any other personal identifier. Your audio recording is never sent to Anthropic — only the transcribed text.</li>
       </ul>
       <p>Anthropic processes this text solely to generate a response to your request and does not use it to train its models by default for API traffic like ours. Review <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a> for details on how they handle this data.</p>
     </section>
@@ -266,7 +266,7 @@
       <p>MyTalkMate requests microphone access to enable voice conversations during practice sessions. Your voice is processed by <strong>Apple's SFSpeechRecognizer</strong>, which may transmit audio to Apple's servers for transcription.</p>
       <ul>
         <li>We do not record, store, or transmit your raw audio ourselves</li>
-        <li>Audio is processed in real-time by Apple's system service and discarded after transcription</li>
+        <li>Audio is handled by Apple's system speech service; Apple's retention and processing of that audio is governed by Apple's own privacy policy, not by us</li>
         <li>Only the resulting text — not the audio — is sent onward to generate an AI reply, as described above</li>
         <li>You can revoke microphone access at any time in iOS Settings</li>
       </ul>
